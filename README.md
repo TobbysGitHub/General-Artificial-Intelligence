@@ -3,7 +3,7 @@ This provides a way to GAI
 
 In order to achieve general intelligence, a new neural network architecture must be studied. I appreciate  Geoffrey Hinton's vision of the Capsule Network and the routing mechanism of the Capsule Network. Also I know about Yann LeCun's effort to develop Self-Supervised Learning. But I think that those structures are not closed to achieve the goal of human-level general intelligence.
 
-A network that enables universal intelligence must be:
+A network that enables general intelligence must be:
 
 1. Composed of basic units. Automatically enable different units for different tasks. You can smoothly add or remove units only by a small amount of local training.
 1. There is no global loss function for optimizition, and the loss functions are distributed and localized around per unit.
