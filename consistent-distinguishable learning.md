@@ -1,4 +1,4 @@
-#consistent-distinguishable learning
+# consistent-distinguishable learning
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
 ### 0. Introduction
@@ -69,7 +69,7 @@ Also, if a certain number is excluded from the sample, such as 1, the training r
 
 <img src="./image/8数图除1.png" width="60%" height="60%"/>
 
-###4. Conclusion
+### 4. Conclusion
 
 The characteristics of the network:
 
@@ -78,6 +78,6 @@ The characteristics of the network:
 3. If you input an untrained distribution, the output is close to the origin
 4. In addition, no over-fitting has been found in all training.
 
-###5. Discussion
+### 5. Discussion
 
 There is a lot of discussion about general intelligence and predictive learning. To develop a general artificial intelligence, its basic components must accept raw data that can be directly obtained from the outside world, and then hand over the relationship between the data itself to form abstract concepts. Consistently-distinguishable learning is an inspiring choice. In the next essay, I will give a blueprint for building a general intelligence based on consistent-distinguishable networks.
