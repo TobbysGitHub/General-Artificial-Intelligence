@@ -17,7 +17,7 @@ The memory unit stores serveral value-address pairs. The value is the output of 
 ### 2. Capsule excitation
 There are two capsule-excitation mode: active excitation mode and memory excitation mode. 
 
-The outputs of the two neural networks of the neuron capsule are aligned, and the two form a consistent distinguishable network structure, which is introduced by the former artical. When the output is distinguishablely-consistent with each other, the capsule is in active excitation mode. The capsule may output the output of the single-step neural network outward, and the memory unit refreshes the stored values ​​and address.
+The outputs of the two neural networks of the neuron capsule are aligned, and the two form a consistent distinguishable network structure, which is introduced by the former artical(consistent-distinguishable learning). When the output is distinguishablely-consistent with each other, the capsule is in active excitation mode. The capsule may output the output of the single-step neural network outward, and the memory unit refreshes the stored values ​​and address.
 
 When not in the active excitation mode, the capsule may output the value stored in the memory unit, which is called a memory excitation mode.
 
@@ -30,7 +30,7 @@ The input of the two networks of the neuron capsule is independent of each other
 
 <img src="./image/胶囊连接.jpg" width="40%" height="40%"/>
 
-Each capsule has its own Consistent Loss Function(CLF): the outputs of the two networks are identical with each other and differentiated from the outputs of the steps before the delay-steps neural network's delay. The training process uses distributed backpropagation. The back propagation of each capsule penetrates other capsules while a maximum penetration depth is necessary. So that the back propagation here is localized and distributed.
+Each capsule has its own Consistent Loss Function(CLF, proposed in former artical: consistent-distinguishable learning): the outputs of the two networks are identical with each other and differentiated from the outputs of the steps before the delay-steps neural network's delay. The training process uses distributed backpropagation. The back propagation of each capsule penetrates other capsules while a maximum penetration depth is necessary. So that the back propagation here is localized and distributed.
 
 <img src="./image/局域优化.jpg" width="40%" height="40%"/>
 
