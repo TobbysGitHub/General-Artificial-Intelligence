@@ -15,9 +15,9 @@ The two neural networks can be neural networks of various structures, with outpu
 The memory unit stores serveral value-address pairs. The value is the output of a single-step neural network when certain conditions are met (actively excited), and the address is the mental space coordinate value of the system at the moment of memory formation.
 
 ### 2. Capsule excitation
-There are two capsule-excitation mode: active excition mode and memory excitation mode. 
+There are two capsule-excitation mode: active excitation mode and memory excitation mode. 
 
-The outputs of the two neural networks of the neuron capsule are aligned, and the two form a consistent distinguishable network structure, which is introduced by the former artical. When the output is distinguishablely-consistent with each other, the capsule is in active excition mode. The capsule may output the output of the single-step neural network outward, and the memory unit refreshes the stored values ​​and address.
+The outputs of the two neural networks of the neuron capsule are aligned, and the two form a consistent distinguishable network structure, which is introduced by the former artical. When the output is distinguishablely-consistent with each other, the capsule is in active excitation mode. The capsule may output the output of the single-step neural network outward, and the memory unit refreshes the stored values ​​and address.
 
 When not in the active excitation mode, the capsule may output the value stored in the memory unit, which is called a memory excitation mode.
 
