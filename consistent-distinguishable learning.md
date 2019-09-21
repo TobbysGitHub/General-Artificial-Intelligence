@@ -31,7 +31,7 @@ Two cnn sub-networks respectively outputting a two-dimensional vector are establ
 
 The output of the first network on sample \\(i\\) is \\(I\_{1i}\\). The output of the second network on sample \\(i\\) is \\(I\_{2i}\\). The batch size is \\(n\\). The loss function, which is called Consistent Loss Function(CLF), is defined as: 
 
-$$ \sum_{i,j=1, i < j}^{n} \sum\_{k,l=1,2, k \ne l} e^{-\frac{\Vert I\_{ki}-I\_{lj} \Vert^2}{2 \Vert I\_{1i}-I\_{2i} \Vert^2}  }$$
+$$ \sum_{i,j=1, i < j}^{n} \sum\_{k,l=1,2, k \ne l} e^{-\frac{\Vert I\_{ki}-I\_{lj} \Vert^2}{ \Vert I\_{1i}-I\_{2i} \Vert^2}  }$$
 
 No scale parameter can be found in it. CLF is not a traditional per-example surprised loss function, it's more like batch normalization. To optimize the CLF is to minimize the distance between pictures of the same sample, while maximize the distances within the whole dataset.
 
