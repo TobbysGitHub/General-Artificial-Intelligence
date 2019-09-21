@@ -1,7 +1,7 @@
 # General-Artificial-Intelligence
 This provides a way to GAI
 
-In order to achieve general intelligence, a new neural network architecture must be studied. I appreciate  Geoffrey Hinton's vision of the Capsule Network and the routing mechanism of the Capsule Network. Also I know about Yann LeCun's effort to develop Self-Supervised Learning. But I think that those structures are not closed to achieve the goal of human-level general intelligence.
+In order to achieve general intelligence, a new neural network architecture must be studied. 、
 
 A network that enables general intelligence must be:
 
