@@ -1,0 +1,52 @@
+
+Despite of the extensive facts from physiological and psychological experiments, yet we haven't convincingly revealed how the human brain converts perceptual signals into internal representations, nor how the underlying neural circuits develop with experience over time.
+Biological development processes are far too complex to hope that a relatively complete understanding of how a perceptual system develops and functions will soon emerge.
+Nonetheless, it is enough appealing if we could instead find a summary principle of it rather than a complete understanding, as what we do when we design computers whose principles of organization can be understood without one's knowing in detail how the components work. 
+This article presents a hypothesis aiming to factorize how the perceptual pathway, specifically in the cerebral cortex, develops and functions with experience.
+Briefly, this theoretical framework interweaves four laws as follows:
+
+\begin{description}
+	\item[The probability premise:] 
+    The perceptual representation is a multi-dimensional probability distribution conditioned on the input sensory signals up to the time.
+    
+In the trial $t$, the value of representation is $\boldsymbol{x}^t=(x_1 x_2 x_3 \dots x_n)^t$, and the sensory signal series up to the time are $\boldsymbol{v}^1\boldsymbol{v}^2\dots \boldsymbol{v}^t=\boldsymbol{V}^t$. This premise states that $$\boldsymbol{x}^t \sim p(\boldsymbol{x}^t|\boldsymbol{V}^t)$$
+A computational model $M$, which is trainable, is built to calculate the conditional distribution $p(\boldsymbol{x}^t|\boldsymbol{V}^t)$ using $\boldsymbol{V}^t$ as the input.
+    
+    \item[The infoMax principle:] 
+The objective function of the model is to maximize the mutual information between its output and the input sensory signals up to the time. 
+
+That is to say
+
+$$
+    \mathcal{F}^t  = \max_{p(\boldsymbol{x}^t|\boldsymbol{V}^t)}I(\boldsymbol{x}^t;\boldsymbol{V}^{t})  
+   =\max_{p(\boldsymbol{x}^t|\boldsymbol{V}^t)}\left\{ H(\boldsymbol{x}^t) - H(\boldsymbol{x}^t|\boldsymbol{V}^{t})\right\}
+$$
+    
+    \item[The prediction constraint:] 
+There is a constraint condition that restricts the conditional distribution in any trial to be the prediction of that in the following trial. 
+
+That is to say,
+the objective $\mathcal{F}^t$ is subject to
+
+$$p(\boldsymbol{x}^t|\boldsymbol{V}^t)\overset{d}{=}  p(\boldsymbol{x}^{t+1}|\boldsymbol{V}^t)$$.
+
+    \item [The Markov property:]
+The conditional distribution in any trial depends only on the input signal at the time and the conditional distribution in the last trial.  
+
+Namely, there exists a functional $f$ satisfies
+$$
+p(\boldsymbol{x}^{t}|\boldsymbol{V}^{t})=f\left(p(\boldsymbol{x}^{t-1}|\boldsymbol{V}^{t-1}), \boldsymbol{v}^{t}, \boldsymbol{x}^{t}\right)
+$$
+\end{description}
+
+
+\max_{p(\boldsymbol{x}^t|\boldsymbol{V}^t)} H(\boldsymbol{x}^t) 
+\Leftrightarrow 
+\sum_{i=1}^n \max_{p(x_i^t|\boldsymbol{V}^t)} H\left(x_i^t|(x_1 \dots x_{i-1}\cancel{x_i} \dots x_n)^t \right)
+
+f\left(p(\boldsymbol{x}^{t}|\boldsymbol{V}^{t}), \boldsymbol{v}^{t+1}, \boldsymbol{x}^{t+1}\right)
+=
+p(\boldsymbol{x}^{t+1}|\boldsymbol{V}^{t+1})
+=\frac{p(\boldsymbol{x}^{t+1}\boldsymbol{V}^{t+1})}{p(\boldsymbol{V}^{t+1})}
+=\frac{p(\boldsymbol{x}^{t+1}|\boldsymbol{V}^{t})\cdot p(\boldsymbol{v}^{t+1}|\boldsymbol{x}^{t+1}\boldsymbol{V}^{t})}{p(\boldsymbol{v}^{t+1}|\boldsymbol{V}^{t})}
+=\frac{p(\boldsymbol{x}^{t}|\boldsymbol{V}^{t})\cdot p(\boldsymbol{v}^{t+1}|\boldsymbol{x}^{t+1}\boldsymbol{V}^{t})}{p(\boldsymbol{v}^{t+1}|\boldsymbol{V}^{t})}
